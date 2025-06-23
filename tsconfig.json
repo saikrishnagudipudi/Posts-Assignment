@@ -1,3 +1,20 @@
 {
-  "extends": "@react-native/typescript-config"
+   "extends": "@react-native/typescript-config",
+  "compilerOptions": {
+    // ... other options
+    "typeRoots": ["./node_modules/@types", "./types"], // If you put it in a 'types' folder
+    // or just ensure 'include' covers the directory where you place it
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "types/**/*.d.ts", // Make sure this path covers your new .d.ts file
+    "jest.setup.js" // If you're using a setup file for global mocks
+  ],
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ]
 }
